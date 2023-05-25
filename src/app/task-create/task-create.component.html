@@ -1,1 +1,23 @@
-<p>task-create works!</p>
+<h2>Création de tâche</h2>
+
+<form #taskForm="ngForm" (ngSubmit)="createTask(taskForm)">
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="Titre" name="title" [(ngModel)]="title" required #titleInput="ngModel">
+      <mat-error *ngIf="titleInput.invalid ">Titre is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <br>
+
+  <div>
+    <mat-form-field>
+      <textarea matInput placeholder="Description" name="description" [(ngModel)]="description" required #descriptionInput="ngModel"></textarea>
+      <mat-error *ngIf="descriptionInput.invalid ">Description is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <br>
+
+  <button mat-raised-button color="primary" type="submit">Créer</button>
+</form>

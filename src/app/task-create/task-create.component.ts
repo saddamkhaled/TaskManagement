@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TaskModel } from '../task.model';
 import { TaskService } from '../task.service';
-import { TaskListComponent } from '../task-list/task-list.component';
 @Component({
   selector: 'app-task-create',
   templateUrl: './task-create.component.html',
   styleUrls: ['./task-create.component.css'],
 })
 export class TaskCreateComponent {
+
   title = '';
   description = '';
   tasks: TaskModel[] = [];
@@ -21,6 +21,7 @@ export class TaskCreateComponent {
   createTask(taskForm: NgForm): void {
     if (taskForm.valid) {
       const newTask: TaskModel = {
+       id:0,
         title: this.title,
         description: this.description,
       };

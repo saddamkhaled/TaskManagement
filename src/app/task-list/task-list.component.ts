@@ -9,13 +9,16 @@ import { TaskService } from '../task.service';
 })
 export class TaskListComponent  {
   tasks: TaskModel[] = [];
-  displayedColumns: string[] = ['title', 'description'];
+  displayedColumns: string[] = ['title', 'description','actions'];
 
   constructor(private taskService: TaskService) {
     this.taskService.getTasks().subscribe((tasks) => {
       this.tasks = tasks;
     });
 
+  }
+  deleteTask(task: TaskModel): void {
+    this.taskService.deleteTask(task);
   }
 
  

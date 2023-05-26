@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TaskModel } from '../task.model';
 import { TaskService } from '../task.service';
-
+import { TaskListComponent } from '../task-list/task-list.component';
 @Component({
   selector: 'app-task-create',
   templateUrl: './task-create.component.html',
@@ -11,8 +11,12 @@ import { TaskService } from '../task.service';
 export class TaskCreateComponent {
   title = '';
   description = '';
-
-  constructor(private taskService: TaskService) {}
+  tasks: TaskModel[] = [];
+  constructor(private taskService: TaskService) {
+    this.taskService.getTasks().subscribe((tasks) => {
+      this.tasks = tasks;
+    });
+  }
 
   createTask(taskForm: NgForm): void {
     if (taskForm.valid) {
@@ -22,6 +26,7 @@ export class TaskCreateComponent {
       };
 
       this.taskService.saveTask(newTask);
+
       console.log(newTask);
 
       taskForm.resetForm();

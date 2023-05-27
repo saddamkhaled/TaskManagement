@@ -3,6 +3,7 @@ import { TaskModel } from '../task.model';
 import { TaskService } from '../task.service';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { TaskEditComponent } from '../task-edit/task-edit.component';
 
 @Component({
   selector: 'app-task-list',
@@ -30,6 +31,19 @@ export class TaskListComponent  {
     } else {
       console.log('Confirmation canceled');
     }
+    });
+  }
+  editTask(task: TaskModel): void {
+    const dialogRef = this.dialog.open(TaskEditComponent, {
+      width: '400px',
+      data: task
+    });
+
+    dialogRef.afterClosed().subscribe((updatedTask: TaskModel) => {
+      if (updatedTask) {
+        // Perform the update logic using the taskService
+        this.taskService.updateTask(updatedTask);
+      }
     });
   }
 

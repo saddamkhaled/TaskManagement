@@ -31,7 +31,17 @@ export class TaskService {
       this.tasksSubject.next([...this.tasks]);
     }
   }
-
+  updateTask(updatedTask: TaskModel): void {
+    const index = this.tasks.findIndex(t => t.id === updatedTask.id);
+    if (index !== -1) {
+      this.tasks[index] = updatedTask;
+      this.updateLocalStorage();
+      this.tasksSubject.next([...this.tasks]);
+    }
+  }
+  private updateLocalStorage(): void {
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
+  }
   private fetchTasks(): void {
     const storedTasks = localStorage.getItem('tasks');
     if (storedTasks) {

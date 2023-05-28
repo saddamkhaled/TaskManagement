@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { TaskModel } from '../task.model';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-task-edit',
@@ -18,12 +19,17 @@ export class TaskEditComponent {
     this.editedTask = { ...data };
   }
 
-  updateTask(): void {
+  updateTask(taskForm:NgForm): void {
     // Update the task with the edited values
+    if (taskForm.valid) {
     this.data.title = this.editedTask.title;
     this.data.description = this.editedTask.description;
     // You can add additional logic or validations here if needed
-
+    }
+    else {
+      alert("Please submit a valid task");
+      console.log("invalid form submission");
+    }
     // Close the dialog and pass the updated task back
     this.dialogRef.close(this.data);
   }

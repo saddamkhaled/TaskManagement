@@ -24,12 +24,36 @@ List the key features of your app to give users an overview of what it can do.
 
 ## Prerequisites
 
-Outline any prerequisites users need to have installed before they can use your app.
+Before you begin, ensure that you have the following prerequisites installed on your machine:
+
+- [Node.js](https://nodejs.org/) (version 18r)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+- [Angular CLI](https://angular.io/cli) (installed globally)
+
+If Angular CLI is not installed on your machine, you can install it using the following command:
+
+```bash
+npm install -g @angular/cli
 
 ## Installation
 
-Explain how users can install and run your app. Provide separate instructions for both local and Docker setups.
+### Docker Setup
 
+1. Make sure Docker is installed on your machine.
+
+2. Build the Docker image:
+
+    ```bash
+    sudo docker buildx build -t taskmanagement:latest .
+    ```
+
+3. Run the Docker container:
+
+    ```bash
+    sudo docker run -p 8080:80 taskmanagement:latest
+    ```
+
+    The app will be accessible at [http://localhost:8080](http://localhost:8080) when running inside the Docker container.
 ### Local Setup
 
 1. Clone the repository:
@@ -58,33 +82,20 @@ Explain how users can install and run your app. Provide separate instructions fo
 
     The app will be accessible at [http://localhost:4200](http://localhost:4200).
 
-### Docker Setup
 
-1. Make sure Docker is installed on your machine.
-
-2. Build the Docker image:
-
-    ```bash
-    sudo docker buildx build -t taskmanagement:latest .
-    ```
-
-3. Run the Docker container:
-
-    ```bash
-    sudo docker run -p 8080:80 taskmanagement:latest
-    ```
-
-    The app will be accessible at [http://localhost:8080](http://localhost:8080) when running inside the Docker container.
 
 ## Usage
 
-Provide instructions on how users can use your app. Include any login credentials or initial setup steps.
-
+Use the app to create tasks for different projects.
+Prioritize tasks based on urgency.
+Mark tasks as complete when done.
+Collaborate with team members by sharing projects.
 ## Contributing
 
-Explain how others can contribute to your project. Include guidelines for submitting issues or pull requests.
-
+Contributions are welcome! If you have suggestions, feature requests, or find issues, please create an issue or submit a pull request.
 ## License
 
-Specify the license under which your project is released.
+This project is licensed under the MIT License.
+
+Feel free to adjust the content further based on your specific needs.
 

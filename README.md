@@ -82,7 +82,7 @@ npm install -g @angular/cli
 
     The app will be accessible at [http://localhost:4200](http://localhost:4200).
 
-
+```
 
 ## Usage
 

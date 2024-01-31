@@ -18,15 +18,12 @@ Welcome to the Task Management App! This application helps you organize and mana
 
 Provide a brief introduction to your Task Management App, its purpose, and why users might find it useful.
 
-## Features
-
-List the key features of your app to give users an overview of what it can do.
 
 ## Prerequisites
 
 Before you begin, ensure that you have the following prerequisites installed on your machine:
 
-- [Node.js](https://nodejs.org/) (version 18r)
+- [Node.js](https://nodejs.org/) (version 18)
 - [npm](https://www.npmjs.com/) (comes with Node.js)
 - [Angular CLI](https://angular.io/cli) (installed globally)
 

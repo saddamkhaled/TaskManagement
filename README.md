@@ -1,27 +1,90 @@
-# TaskManagement
+# Task Management App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+Welcome to the Task Management App! This application helps you organize and manage your tasks efficiently.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Prerequisites](#prerequisites)
+4. [Installation](#installation)
+    1. [Local Setup](#local-setup)
+    2. [Docker Setup](#docker-setup)
+5. [Usage](#usage)
+6. [Contributing](#contributing)
+7. [License](#license)
 
-## Code scaffolding
+## Introduction
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Provide a brief introduction to your Task Management App, its purpose, and why users might find it useful.
 
-## Build
+## Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+List the key features of your app to give users an overview of what it can do.
 
-## Running unit tests
+## Prerequisites
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Outline any prerequisites users need to have installed before they can use your app.
 
-## Running end-to-end tests
+## Installation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Explain how users can install and run your app. Provide separate instructions for both local and Docker setups.
 
-## Further help
+### Local Setup
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/your-username/task-management-app.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd task-management-app
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+4. Start the app:
+
+    ```bash
+    ng serve
+    ```
+
+    The app will be accessible at [http://localhost:4200](http://localhost:4200).
+
+### Docker Setup
+
+1. Make sure Docker is installed on your machine.
+
+2. Build the Docker image:
+
+    ```bash
+    sudo docker buildx build -t taskmanagement:latest .
+    ```
+
+3. Run the Docker container:
+
+    ```bash
+    sudo docker run -p 8080:80 taskmanagement:latest
+    ```
+
+    The app will be accessible at [http://localhost:8080](http://localhost:8080) when running inside the Docker container.
+
+## Usage
+
+Provide instructions on how users can use your app. Include any login credentials or initial setup steps.
+
+## Contributing
+
+Explain how others can contribute to your project. Include guidelines for submitting issues or pull requests.
+
+## License
+
+Specify the license under which your project is released.
+

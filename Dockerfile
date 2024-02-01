@@ -20,8 +20,13 @@ RUN npm run build --prod --output-path=dist/task-management
 # Stage 2: Run Nginx to Serve Angular App
 FROM nginx:alpine
 
+# Copy built Angular app
 COPY --from=build /app/dist/task-management/ /usr/share/nginx/html
 
+# Change ownership of favicon.ico
+RUN chown -R nginx:nginx /usr/share/nginx/html/favicon.ico
+
+# Copy custom Nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80

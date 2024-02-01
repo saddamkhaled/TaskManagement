@@ -23,8 +23,8 @@ FROM nginx:alpine
 # Copy built Angular app
 COPY --from=build /app/dist/task-management/ /usr/share/nginx/html
 
-# Change ownership of favicon.ico
-RUN chown -R nginx:nginx /usr/share/nginx/html/favicon.ico
+# Copy favicon.ico directly to NGINX directory
+COPY --from=build /app/dist/task-management/favicon.ico /usr/share/nginx/html/favicon.ico
 
 # Copy custom Nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf

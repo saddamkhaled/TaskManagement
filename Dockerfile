@@ -20,6 +20,10 @@ RUN npm run build --prod --output-path=dist/task-management
 # Stage 2: Run Nginx to Serve Angular App
 FROM nginx:alpine
 
+# Install Docker client
+USER root
+RUN apk --no-cache add docker
+
 # Copy built Angular app
 COPY --from=build /app/dist/task-management/ /usr/share/nginx/html
 

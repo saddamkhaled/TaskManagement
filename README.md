@@ -17,8 +17,7 @@ Welcome to the Task Management App! This application helps you organize and mana
 
 ## Introduction
 
-Provide a brief introduction to your Task Management App, its purpose, and why users might find it useful.
-
+Our task management application is designed to help individuals and teams manage their tasks and projects efficiently.
 
 ## Prerequisites
 

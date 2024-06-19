@@ -16,6 +16,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
     TaskCreateComponent,
     TaskEditComponent,
     ConfirmationDialogComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

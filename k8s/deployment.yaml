@@ -1,20 +1,20 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: apps/v1  # Specifies the API version for the Deployment resource. `apps/v1` is the stable version for managing Deployments.
+kind: Deployment     # Defines the kind of Kubernetes resource, in this case, a Deployment which manages a set of replicated Pods.
 metadata:
-  name: taskmanagement-deployment
-  namespace: devopsproject
+  name: taskmanagement-deployment  # The name of the Deployment. This is a unique identifier for the Deployment within the namespace.
+  namespace: taskmanagement         # The namespace in which this Deployment resource is created, isolating it within a specific environment.
 spec:
-  replicas: 2
+  replicas: 2                      # Specifies the desired number of Pod replicas. Kubernetes will ensure that 2 Pods are running at all times.
   selector:
     matchLabels:
-      app: taskmanagement
-  template:
+      app: taskmanagement          # The label selector that determines which Pods the Deployment manages. It matches Pods with the label `app: taskmanagement`.
+  template:                        # The Pod template that defines how the Pods managed by the Deployment should be created.
     metadata:
       labels:
-        app: taskmanagement
+        app: taskmanagement        # Labels assigned to Pods created by this Deployment. These labels must match the selector above.
     spec: 
-      containers:
-      - name: taskmanagement
-        image: elboff/taskmanagement:latest
+      containers:                  # Specifies the container(s) to run within each Pod.
+      - name: taskmanagement        # The name of the container inside the Pod.
+        image: elboff/taskmanagement:latest  # The Docker image to use for this container. `elboff/taskmanagement:latest` is the image with the latest tag.
         ports:
-        - containerPort: 80
+        - containerPort: 80        # The port that this container will expose. Port 80 is typically used for HTTP traffic.

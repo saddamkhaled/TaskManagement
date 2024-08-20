@@ -1,14 +1,13 @@
-apiVersion: v1
-kind: Service
+apiVersion: v1   # Specifies the API version for the Service resource. `v1` is the stable version for core Kubernetes objects, including Services.
+kind: Service    # Defines the kind of Kubernetes resource, in this case, a Service which provides network access to a set of Pods.
 metadata:
-  name: taskmanagement
-  namespace: devopsproject
+  name: taskmanagement  # The name of the Service. This is a unique identifier for the Service within the namespace.
+  namespace: taskmanagement  # The namespace in which this Service resource is created, isolating it within a specific environment.
 spec:
   selector:
-    app: taskmanagement
-  type: NodePort
+    app: taskmanagement  # The label selector that determines which Pods this Service will target. It will route traffic to Pods with the label `app: taskmanagement`.
+  type: LoadBalancer  # The type of Service. `NodePort` exposes the Service on a static port on each node’s IP, allowing external traffic to access it.
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
-
+  - protocol: TCP  # The protocol used by the Service. `TCP` is the most common protocol for HTTP traffic.
+    port: 80  # The port on which the Service will be exposed within the cluster (ClusterIP). Other services within the cluster can reach this Service on port 80.
+    targetPort: 80  # The port on the container that the traffic will be forwarded to. This must match the container's exposed port.

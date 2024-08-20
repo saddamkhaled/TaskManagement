@@ -22,7 +22,7 @@ jobs:
 
       - name: Build and push Docker image
         env:
-          REPOSITORY: nginx
+          REPOSITORY: taskmanagement
           IMAGE_TAG: latest
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG .
